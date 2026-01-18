@@ -22,7 +22,7 @@ const schemaData = {
   "@type": "Person",
   name: "ANANYA KAUL",
   url: "https://www.linkedin.com/in/ananyakaul",
-  image: "https://sohez.github.io/images/hero/sohel-sayyed-image.webp", // keeping placeholder or removing
+  image: "/images/hero/IMG_4620.JPG",
   sameAs: [
     "https://www.instagram.com/theluckylad",
     "https://www.linkedin.com/in/ananyakaul",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     siteName: "Ananya Kaul Portfolio",
     images: [
       {
-        url: "/images/hero/sohel-sayyed-image.webp",
+        url: "/images/hero/IMG_4620.JPG",
         width: 800,
         height: 800,
         alt: "Ananya Kaul",
@@ -82,8 +82,8 @@ export const metadata: Metadata = {
     title: "Ananya Kaul",
   },
   icons: {
-    icon: "/favicon.ico", // Using default standard path
-    apple: "/images/hero/sohel-sayyed-image.webp",
+    icon: "/images/hero/IMG_4620.JPG?v=1", // Using profile picture with version to force refresh
+    apple: "/images/hero/IMG_4620.JPG",
   },
 };
 

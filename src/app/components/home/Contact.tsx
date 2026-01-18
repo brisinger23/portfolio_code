@@ -15,7 +15,7 @@ const Contact = () => {
   const [isSending, setIsSending] = useState(false);
 
   const emailUrl =
-    "https://script.google.com/macros/s/AKfycbwkjI7POBip0D3idUWfZwmdN4bV9TPfkfUWLwWZbu_rxDWSM5_F5VI1jVAXCKlRt0ykAg/exec";
+    "https://script.google.com/macros/s/AKfycbwVoRN6EEeHKCYyn1zLtIpevnoUIGBstOU1LWt-MCXZCBcUSZ9-cKoeKuWQtGE22ZMa/exec";
 
   /** Email validation */
   const checkEmailIsValid = (email: string) => {
@@ -54,7 +54,7 @@ const Contact = () => {
     const formData = new FormData();
     formData.set("Name", "@PORTFOLIO-v2");
     formData.set("Email", form.email);
-    formData.set("Request", form.message);
+    formData.set("Message", form.message);
 
     try {
       const response = await fetch(emailUrl, {
@@ -106,9 +106,8 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          className={`w-full max-w-3xl border border-gray-700 bg-[#161B22]/70 backdrop-blur-3xl p-8 rounded-2xl flex flex-col gap-6 text-gray-200 ${
-            isSending ? "opacity-70 pointer-events-none" : ""
-          }`}
+          className={`w-full max-w-3xl border border-gray-700 bg-[#161B22]/70 backdrop-blur-3xl p-8 rounded-2xl flex flex-col gap-6 text-gray-200 ${isSending ? "opacity-70 pointer-events-none" : ""
+            }`}
         >
           {/* Email */}
           <div className="flex flex-col">
@@ -122,11 +121,9 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="your@email.com"
-              className={`px-4 py-3 rounded-md bg-transparent border ${
-                errors.email ? "border-red-500" : "border-gray-700"
-              } focus:outline-none focus:ring-2 ${
-                errors.email ? "focus:ring-red-500" : "focus:ring-gray-500"
-              } placeholder-gray-500 transition-all duration-200`}
+              className={`px-4 py-3 rounded-md bg-transparent border ${errors.email ? "border-red-500" : "border-gray-700"
+                } focus:outline-none focus:ring-2 ${errors.email ? "focus:ring-red-500" : "focus:ring-gray-500"
+                } placeholder-gray-500 transition-all duration-200`}
               disabled={isSending}
             />
             {errors.email && (
@@ -146,11 +143,9 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="Write your message here..."
-              className={`px-4 py-3 rounded-md bg-transparent border ${
-                errors.message ? "border-red-500" : "border-gray-700"
-              } focus:outline-none focus:ring-2 ${
-                errors.message ? "focus:ring-red-500" : "focus:ring-gray-500"
-              } placeholder-gray-500 resize-none transition-all duration-200`}
+              className={`px-4 py-3 rounded-md bg-transparent border ${errors.message ? "border-red-500" : "border-gray-700"
+                } focus:outline-none focus:ring-2 ${errors.message ? "focus:ring-red-500" : "focus:ring-gray-500"
+                } placeholder-gray-500 resize-none transition-all duration-200`}
               disabled={isSending}
             />
             {errors.message && (
@@ -160,7 +155,7 @@ const Contact = () => {
             )}
           </div>
 
-          
+
           {/* Status Message */}
           {status && (
             <motion.p
@@ -176,11 +171,10 @@ const Contact = () => {
           <button
             type="submit"
             disabled={isSending}
-            className={`cursor-pointer mt-3 max-w-fit py-2 px-5 flex gap-2 justify-center items-center rounded-lg border border-gray-700 text-gray-200 transition-all ${
-              isSending
-                ? "bg-gray-800 cursor-not-allowed"
-                : "hover:border-blue-500 hover:text-blue-500"
-            }`}
+            className={`cursor-pointer mt-3 max-w-fit py-2 px-5 flex gap-2 justify-center items-center rounded-lg border border-gray-700 text-gray-200 transition-all ${isSending
+              ? "bg-gray-800 cursor-not-allowed"
+              : "hover:border-blue-500 hover:text-blue-500"
+              }`}
           >
             {isSending ? (
               <>

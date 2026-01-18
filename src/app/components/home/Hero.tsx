@@ -62,6 +62,23 @@ const Hero = () => {
             </h1>
           </div>
 
+          <div className="flex flex-col md:flex-row gap-4 items-center">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/20"
+            >
+              Download Resume
+            </a>
+            <button
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-3 rounded-full border border-gray-700 hover:border-gray-500 transition-all font-medium"
+            >
+              View Projects
+            </button>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

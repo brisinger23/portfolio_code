@@ -41,7 +41,17 @@ const Achievements = () => {
                             </li>
                             <li className="flex gap-3">
                                 <span className="text-purple-500 text-lg">★</span>
-                                <span><strong className="text-white">Research Publication</strong> – Published a research paper on advanced engineering in the International Research Journal on Advanced Engineering Hub (IRJAEH).</span>
+                                <div className="flex flex-col gap-1">
+                                    <span><strong className="text-white">Research Publication</strong> – Published a research paper on advanced engineering in the International Research Journal on Advanced Engineering Hub (IRJAEH).</span>
+                                    <a
+                                        href="https://irjaeh.com/index.php/journal/article/view/243"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-1 transition-colors w-fit"
+                                    >
+                                        View Publication <span className="text-xs">↗</span>
+                                    </a>
+                                </div>
                             </li>
                             <li className="flex gap-3">
                                 <span className="text-green-500 text-lg">★</span>

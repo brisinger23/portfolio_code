@@ -33,8 +33,8 @@ const NavBar = () => {
         <Code2Icon />
         ANANYA KAUL
       </Link>
-      <nav>
-        <ul className="flex gap-2 text-sm font-medium">
+      <nav className="flex gap-4 items-center">
+        <ul className="flex gap-2 text-sm font-medium items-center">
           <li>
             <button
               type="button"
@@ -45,12 +45,16 @@ const NavBar = () => {
               <FolderClosedIcon size={18} /> Projects
             </button>
           </li>
-          {/* <li className="py-1">
-            <span className="w-0.5 h-full bg-red-500 inline-block"></span>
+          <li className="ml-2">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex border border-blue-500/50 text-blue-400 px-4 py-2 rounded-lg text-xs hover:bg-blue-500/10 transition-all"
+            >
+              Resume
+            </a>
           </li>
-          <li>
-             Link to GitHub or LinkedIn can go here 
-          </li> */}
         </ul>
       </nav>
     </div>
