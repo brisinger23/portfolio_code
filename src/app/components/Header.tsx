@@ -31,7 +31,7 @@ const NavBar = () => {
         className="font-medium font-display text-gray-50 flex gap-2 justify-center items-center"
       >
         <Code2Icon />
-        SOHEL SAYYED
+        ANANYA KAUL
       </Link>
       <nav>
         <ul className="flex gap-2 text-sm font-medium">
@@ -45,19 +45,12 @@ const NavBar = () => {
               <FolderClosedIcon size={18} /> Projects
             </button>
           </li>
-          <li className="py-1">
+          {/* <li className="py-1">
             <span className="w-0.5 h-full bg-red-500 inline-block"></span>
           </li>
           <li>
-            <Link
-              target="_blank"
-              title="Github"
-              href="https://github.com/sohez"
-              className="flex items-center gap-2 hover:text-gray-200 transition-all duration-200 bg-gradient-to-b from-transparent to-transparent hover:from-transparent hover:to-gray-900 hover:border-b-[0.2] border-gray-500 px-3 py-2 rounded-lg"
-            >
-              <BsGithub size={18} />
-            </Link>
-          </li>
+             Link to GitHub or LinkedIn can go here 
+          </li> */}
         </ul>
       </nav>
     </div>

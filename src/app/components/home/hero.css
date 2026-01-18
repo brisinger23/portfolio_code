@@ -1,5 +1,6 @@
 .slider {
-  height: 40px; /* Height of one line of text */
+  height: 40px;
+  /* Height of one line of text */
   overflow: hidden;
   position: relative;
   font-size: 24px;
@@ -11,29 +12,44 @@
   flex-direction: column;
   will-change: transform;
   transform: translateZ(0);
-  animation: slide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: slide 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .slides div {
-  height: 40px; /* Same as slider height */
+  height: 40px;
+  /* Same as slider height */
   display: flex;
   align-items: center;
 }
 
 @keyframes slide {
-  0% {
+
+  0%,
+  15% {
     transform: translateY(0);
   }
-  40% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-40px); /* Move up to show the 2nd item */
-  }
-  90% {
+
+  20%,
+  35% {
     transform: translateY(-40px);
   }
+
+  40%,
+  55% {
+    transform: translateY(-80px);
+  }
+
+  60%,
+  75% {
+    transform: translateY(-120px);
+  }
+
+  80%,
+  95% {
+    transform: translateY(-160px);
+  }
+
   100% {
-    transform: translateY(0); /* Back to first */
+    transform: translateY(0);
   }
 }

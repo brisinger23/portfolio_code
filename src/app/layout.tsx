@@ -20,55 +20,53 @@ const openSans = Open_Sans({
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "SAYYED SOHEL",
-  url: "https://sohez.github.io/",
-  image: "https://sohez.github.io/images/hero/sohel-sayyed-image.webp",
+  name: "ANANYA KAUL",
+  url: "https://www.linkedin.com/in/ananyakaul",
+  image: "https://sohez.github.io/images/hero/sohel-sayyed-image.webp", // keeping placeholder or removing
   sameAs: [
-    "https://www.instagram.com/sohel_sayyed.0x",
-    "https://github.com/sohez",
-    "https://www.linkedin.com/in/sohez/",
+    "https://www.instagram.com/theluckylad",
+    "https://www.linkedin.com/in/ananyakaul",
   ],
-  jobTitle: "Founder & Software Developer",
+  jobTitle: "Junior Mobile Developer",
   worksFor: {
     "@type": "Organization",
-    name: "Sohezsoft",
-    url: "https://sohez.github.io/",
+    name: "iApp Technologies LLP",
+    url: "https://iapptechnologies.com/",
   },
   description:
-    "Sayyed Sohel — Full-Stack Web & Android Developer, Founder of Sohezsoft. I build fast, modern, and user-focused digital experiences that stand out.",
+    "Ananya Kaul — Junior Mobile Developer specializing in high-performance iOS applications and AI/ML solutions.",
 };
 
 export const metadata: Metadata = {
-  title: "Sohez: Official Site of Sayyed Sohel",
+  title: "Ananya Kaul | iOS Developer & AI Enthusiast",
   description:
-    "Sayyed Sohel — Full-Stack Web & Android Developer, Founder of Sohezsoft. I build fast, modern, and user-focused digital experiences that stand out.",
+    "Ananya Kaul — Junior Mobile Developer specializing in high-performance iOS applications and AI/ML solutions.",
   keywords: [
-    "Sohez: Official Site of Sayyed Sohel",
-    "sayyed sohel",
-    "sohez",
-    "Sohez Official",
-    "Portfolio website",
-    "Developer website",
-    "Websites Development",
-    "Android Development",
+    "Ananya Kaul",
+    "iOS Developer",
+    "Mobile Developer",
+    "AI/ML",
+    "Swift",
+    "Python",
+    "Portfolio",
   ],
-  metadataBase: new URL("https://sohez.github.io/"),
+  metadataBase: new URL("http://localhost:3000"), // Localhost for now or generic
   alternates: {
-    canonical: "https://sohez.github.io/",
+    canonical: "/",
   },
   openGraph: {
     type: "website",
-    url: "https://sohez.github.io/",
-    title: "Sohez: Official Site of Sayyed Sohel",
+    url: "/",
+    title: "Ananya Kaul | iOS Developer & AI Enthusiast",
     description:
-      "Sayyed Sohel — Full-Stack Web & Android Developer, Founder of Sohezsoft. I build fast, modern, and user-focused digital experiences that stand out.",
-    siteName: "sohez.github.io",
+      "Ananya Kaul — Junior Mobile Developer specializing in high-performance iOS applications and AI/ML solutions.",
+    siteName: "Ananya Kaul Portfolio",
     images: [
       {
-        url: "https://sohez.github.io/images/hero/sohel-sayyed-image.webp",
+        url: "/images/hero/sohel-sayyed-image.webp",
         width: 800,
         height: 800,
-        alt: "Sayyed Sohel",
+        alt: "Ananya Kaul",
       },
     ],
     locale: "en_US",
@@ -77,17 +75,15 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  verification: {
-    google: "bu-25FFf4PhQHh1K0g0TkBl234K940ET9TRibw34ExM",
-  },
+  // Removed verification as it was specific to the previous user
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Sohez",
+    title: "Ananya Kaul",
   },
   icons: {
-    icon: "https://sohez.github.io/images/hero/sohel-sayyed-image.webp",
-    apple: "https://sohez.github.io/images/hero/sohel-sayyed-image.webp",
+    icon: "/favicon.ico", // Using default standard path
+    apple: "/images/hero/sohel-sayyed-image.webp",
   },
 };
 

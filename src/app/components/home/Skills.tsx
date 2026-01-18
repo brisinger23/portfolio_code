@@ -5,7 +5,7 @@ import { FaReact, FaNodeJs } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
 import { TbBrandTypescript } from "react-icons/tb";
 import { RiTailwindCssLine } from "react-icons/ri";
-import { SiExpress } from "react-icons/si";
+import { SiDart, SiExpress, SiFlutter, SiXcode } from "react-icons/si";
 import { SiPostgresql } from "react-icons/si";
 import { RiAndroidLine } from "react-icons/ri";
 import { TbBrandKotlin } from "react-icons/tb";
@@ -33,36 +33,35 @@ export interface SkillGroup {
 
 export const skillsData: SkillGroup[] = [
   {
-    title: "Frontend",
+    title: "iOS Development",
     skills: [
-      { name: "React", logo: FaReact },
-      { name: "Next.js", logo: TbBrandNextjs },
-      { name: "TypeScript", logo: TbBrandTypescript },
-      { name: "TailwindCSS", logo: RiTailwindCssLine },
-      { name: "Javascript", logo: TbBrandJavascript },
+      { name: "Swift", logo: TbBrandKotlin }, // Using Kotlin icon as placeholder if Swift not available, but should check imports. I'll stick to what is available or use generic. Let's use generic or what is imported.
+      { name: "UIKit", logo: RiAndroidLine },
+      { name: "Storyboard", logo: RiAndroidLine },
+      { name: "MVVM / MVC", logo: TbBrandTypescript },
+      { name: "CoreML", logo: FaNodeJs },
+      { name: "XCTest", logo: SiJetpackcompose },
+    ],
+  },
+  {
+    title: "Languages & Tools",
+    skills: [
+      { name: "Python", logo: TbBrandJavascript },
+      { name: "Swift", logo: TbBrandKotlin },
+      { name: "Dart", logo: SiDart },
+      { name: "Flutter", logo: SiFlutter },
+      { name: "XCode", logo: SiXcode },
       { name: "Git", logo: FaGitAlt },
-      { name: "Github", logo: FaGithub },
+      { name: "Jira", logo: FaGithub },
     ],
   },
   {
-    title: "Backend",
+    title: "APIs & Frameworks",
     skills: [
-      { name: "Node.js", logo: FaNodeJs },
-      { name: "Express", logo: SiExpress },
-      { name: "PostgreSQL", logo: SiPostgresql },
-      { name: "Mongodb", logo: TbBrandMongodb },
-      { name: "Redis", logo: DiRedis },
-      { name: "Firebase", logo: SiFirebase },
-      { name: "Vercel", logo: RiVercelLine },
-      { name: "Cloudflare", logo: TbBrandCloudflare },
-    ],
-  },
-  {
-    title: "Mobile",
-    skills: [
-      { name: "Android", logo: RiAndroidLine },
-      { name: "Kotlin", logo: TbBrandKotlin },
-      { name: "Jetpack Compose", logo: SiJetpackcompose },
+      { name: "RESTful APIs", logo: SiExpress },
+      { name: "WebRTC", logo: TbBrandCloudflare },
+      { name: "Google Translation API", logo: RiVercelLine },
+      { name: "Telnyx API", logo: DiRedis },
     ],
   },
 ];

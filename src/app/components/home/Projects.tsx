@@ -16,39 +16,37 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Mcodo :Learn Coding with AI",
+    title: "Math AI - Homework Helper",
     description:
-      "Mcodo is an AI-powered learning platform that makes coding interactive, personalized, and fun for everyone—from beginners to pros.",
-    image: "/images/projects/mcodo.webp",
-    tags: ["Kotlin", "NodeJS", "Room-DB", "Ktor Client", "SSE"],
+      "A cross-platform mobile app using Flutter to help students solve math problems, write essays with AI, and summarize PDFs. Features real-time math solver with camera input.",
+    image: "/images/projects/mcodo.webp", // Keeping placeholder
+    tags: ["Flutter", "Dart", "GetX", "Firebase", "SQLite", "STT/TTS"],
     github: null,
-    demo: "https://play.google.com/store/apps/details?id=com.sohezsoft.mcodo&hl=en_IN",
+    demo: null, // "Available on App Store" but no link provided
   },
   {
-    title: "HRMS System",
+    title: "PhotoVoice Translator",
     description:
-      "HRMS System – Full Stack Web & Android app for attendance, leave, payroll, and scheduling with secure RBAC and JWT auth.",
-    image: "/images/projects/hrms.webp",
+      "iOS app for real-time text translation, word-to-text, and PDF-to-text extraction. Integrated AI chat prompts using DeepSeek API.",
+    image: "/images/projects/hrms.webp", // Keeping placeholder
     tags: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind",
-      "Express",
-      "PostgreSQL",
-      "Jetpack Compose",
-      "Drizzel-ORM",
+      "Swift",
+      "UIKit",
+      "Vision Framework",
+      "Google Translation API",
+      "Alamofire",
     ],
     github: null,
     demo: null,
   },
   {
-    title: "M.C.P : Marks & Percentage Calculator",
+    title: "SecondLine",
     description:
-      "powerful and easy-to-use solution for calculating academic performance. Built with HTML, CSS, JavaScript, html2canvas, and jsPDF.",
-    image: "/images/projects/mpc.webp",
-    tags: ["HTML", "Css", "JS", "html2canvas", "jsPDF"],
-    github: "https://github.com/sohez/Marks-Percentage-Calculator",
-    demo: "https://sohez.github.io/Marks-Percentage-Calculator/",
+      "iOS application enabling users to acquire alternate phone numbers. Features VoIP calling, messaging, and push notifications.",
+    image: "/images/projects/mpc.webp", // Keeping placeholder
+    tags: ["Swift", "UIKit", "Telnyx API", "Core Data", "WebRTC", "CallKit"],
+    github: null,
+    demo: null,
   },
 ];
 
@@ -69,7 +67,7 @@ const Projects = () => {
           />
         </motion.div>
 
-       {/* Projects Grid */}
+        {/* Projects Grid */}
         <motion.div
           initial="hidden"
           whileInView="visible"

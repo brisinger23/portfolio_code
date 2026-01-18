@@ -11,22 +11,22 @@ const socialLinks = [
   {
     name: "Instagram",
     icon: <BsInstagram size={20} />,
-    url: "https://www.instagram.com/sohel_sayyed.0x",
+    url: "https://www.instagram.com/theluckylad",
   },
   {
     name: "WhatsApp",
     icon: <BsWhatsapp size={20} />,
-    url: "https://wa.me/+917887614788",
+    url: "https://wa.me/+918968692390",
   },
   {
     name: "Email",
     icon: <MdMailOutline size={24} />,
-    url: "mailto:techsohez@gmail.com",
+    url: "mailto:kaul23ananya@gmail.com",
   },
   {
     name: "Linkedin",
     icon: <FiLinkedin size={24} />,
-    url: "https://www.linkedin.com/in/sohez/",
+    url: "https://linkedin.com/in/ananyakaul",
   },
 ];
 
@@ -49,11 +49,10 @@ const Footer = () => {
         <div className="mt-4 w-full flex flex-col-reverse md:flex-row gap-8 justify-between">
           <div className="flex gap-1 flex-col items-center md:items-start justify-center">
             <h3 className="text-xl font-medium font-display flex gap-1">
-              <Code2Icon /> SAYYED SOHEL
+              <Code2Icon /> ANANYA KAUL
             </h3>
             <p className="text-gray-500 text-center">
-              Sayyed Sohel © {new Date().getFullYear()} Built with ❤️ by Sohel
-              Sayyed
+              {/* Ananya Kaul © {new Date().getFullYear()} Built by Ananya Kaul */}
             </p>
           </div>
 

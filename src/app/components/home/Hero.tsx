@@ -2,26 +2,31 @@
 import Image from "next/image";
 import React from "react";
 import "./hero.css";
-import { BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { BsInstagram, BsWhatsapp, BsLinkedin } from "react-icons/bs";
 import { MdMailOutline } from "react-icons/md";
 import { motion } from "framer-motion";
 
 const socialLinks = [
   {
-    name: "Instagram",
-    icon: <BsInstagram size={20} />,
-    url: "https://www.instagram.com/sohel_sayyed.0x",
+    name: "LinkedIn",
+    icon: <BsLinkedin size={20} />,
+    url: "https://linkedin.com/in/ananyakaul",
   },
   {
     name: "Email",
     icon: <MdMailOutline size={25} />,
-    url: "mailto:techsohez@gmail.com",
+    url: "mailto:kaul23ananya@gmail.com",
   },
   {
     name: "WhatsApp",
     icon: <BsWhatsapp size={20} />,
-    url: "https://wa.me/+917887614788",
+    url: "https://wa.me/+918968692390",
   },
+  {
+    name: "Instagram",
+    icon: <BsInstagram size={20} />,
+    url: "https://www.instagram.com/theluckylad",
+  }
 ];
 
 const Hero = () => {
@@ -36,8 +41,8 @@ const Hero = () => {
           className="border-4 border-gray-800 group relative w-40 sm:w-40 md:w-48 lg:w-56 aspect-square overflow-hidden rounded-full transition-all duration-300"
         >
           <Image
-            src="/images/hero/sohel-sayyed-image.webp"
-            alt="Sohel Sayyed - profile photo"
+            src="/images/hero/IMG_4620.JPG"
+            alt="Ananya Kaul - profile photo"
             fill
             className="grayscale-100 hover:grayscale-0 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
           />
@@ -53,7 +58,7 @@ const Hero = () => {
           <div className="flex flex-col justify-center items-center text-center md:text-start md:justify-start md:items-start">
             <span>Hi, I&apos;m</span>
             <h1 className="font-display tracking-normal text-5xl font-medium text-gray-50">
-              Sohel Sayyed
+              Ananya Kaul
             </h1>
           </div>
 
@@ -66,11 +71,9 @@ const Hero = () => {
           </motion.div>
 
           <p className="text-xl tracking-wider text-center leading-relaxed">
-            I&apos;m Sayyed Sohel, a professional with extensive experience in{" "}
-            <span>crafting user-friendly <span className="bg-blue-900/60 px-1">websites</span></span> and powerful{" "}
-            <span className="bg-purple-900/60 px-1">Android applications</span>. I can help you bring your digital
-            ideas to life — whether it&apos;s a sleek modern website or a
-            feature-rich mobile app!
+            I&apos;m Ananya Kaul, a <span className="text-blue-400">Junior Mobile Developer</span> specializing in{" "}
+            <span>high-performance <span className="bg-blue-900/60 px-1">iOS applications</span></span> and AI/ML solutions.
+            Passionate about crafting scalable architectures and intuitive user experiences using Swift, Dart, Python, and CoreML.
           </p>
 
           <motion.div
@@ -96,10 +99,19 @@ const SkillsSlider = () => {
       <div className="slider">
         <div className="slides text-gray-300">
           <div>
-            Android Dev
+            Mobile Developer
           </div>
           <div>
-            Fullstack Dev
+            iOS Developer
+          </div>
+          <div>
+            Flutter Developer
+          </div>
+          <div>
+            AI/ML Enthusiast
+          </div>
+          <div>
+            Mobile Developer
           </div>
         </div>
       </div>
