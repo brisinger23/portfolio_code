@@ -4,6 +4,7 @@ import "./globals.css";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import CursorTrail from "./components/CursorTrail";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -107,6 +108,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${openSans.variable} antialiased grid-background`}
       >
+        <CursorTrail />
         <ScrollToTop />
         <Header />
         <main>{children}</main>
