@@ -146,7 +146,7 @@ export default Projects;
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <article className="h-full flex flex-col border border-gray-700 text-gray-300 backdrop-blur-3xl bg-[#161B22]/70 rounded-2xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]">
+    <article className="h-full flex flex-col glass-effect text-gray-300 rounded-2xl overflow-hidden group transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-black/40 hover:border-white/20">
       {/* Image Section - Wrapped in link if appStore or playStore exists */}
       <a
         href={project.appStore || project.playStore || "#"}
@@ -159,11 +159,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
           loading="lazy"
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
           {(project.appStore || project.playStore) && (
-            <span className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white font-medium border border-white/20">
+            <span className="bg-blue-600 px-6 py-2 rounded-full text-white font-bold text-sm border border-blue-400/50 shadow-lg shadow-blue-500/30 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               View Project
             </span>
           )}
@@ -174,10 +174,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div className="flex flex-col flex-1 p-6 sm:p-7 gap-4">
         {/* Title + Description */}
         <div>
-          <h3 className="font-display text-xl sm:text-xl font-bold mb-2 group-hover:gradient-text transition-all tracking-tight">
+          <h3 className="font-display text-xl sm:text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors tracking-tight">
             {project.title}
           </h3>
-          <p className="text-gray-400 text-sm sm:text-base leading-normal line-clamp-3">
+          <p className="text-gray-400 text-sm sm:text-base leading-relaxed line-clamp-3">
             {project.description}
           </p>
         </div>
@@ -187,7 +187,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="border border-gray-700 bg-[#0D1117] text-xs sm:text-sm px-3 py-1.5 rounded-full font-medium"
+              className="border border-white/5 bg-white/5 text-gray-400 text-xs sm:text-sm px-3 py-1.5 rounded-full font-medium group-hover:bg-blue-500/10 group-hover:text-blue-300 group-hover:border-blue-500/20 transition-colors duration-500"
             >
               {tag}
             </span>
@@ -195,15 +195,15 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
 
         {/* Push the buttons to the bottom */}
-        <div className="mt-auto flex gap-3 pt-4 border-t border-gray-800">
+        <div className="mt-auto flex gap-3 pt-4 border-t border-white/10">
           {project.appStore && (
             <a
               href={project.appStore}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex justify-center items-center py-2.5 rounded-lg border border-gray-700 hover:border-red-500 hover:text-red-500 transition-all text-sm"
+              className="flex-1 flex justify-center items-center py-2.5 rounded-xl border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all text-sm group/btn"
             >
-              <Image src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Apple_logo_black.svg" width={16} height={16} alt="App Store" className="mr-2 invert" />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Apple_logo_black.svg" width={16} height={16} alt="App Store" className="mr-2 invert group-hover/btn:scale-110 transition-transform" />
               App Store
             </a>
           )}
@@ -212,9 +212,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
               href={project.playStore}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex justify-center items-center py-2.5 rounded-lg border border-gray-700 hover:border-red-500 hover:text-red-500 transition-all text-sm"
+              className="flex-1 flex justify-center items-center py-2.5 rounded-xl border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all text-sm group/btn"
             >
-              <Image src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Google_Play_Store_badge_EN.svg" width={16} height={16} alt="Play Store" className="mr-2" />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Google_Play_Store_badge_EN.svg" width={16} height={16} alt="Play Store" className="mr-2 group-hover/btn:scale-110 transition-transform" />
               Play Store
             </a>
           )}
