@@ -2,23 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Home Page -->
     <url>
-        <loc>/</loc>
-        <lastmod>2025-10-27</lastmod>
+        <loc>https://brisinger23.github.io/portfolio_code/</loc>
+        <lastmod>2026-07-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-    </url>
-    <!-- Tic Tac Toe Page -->
-    <url>
-        <loc>/tic-tac-toe/</loc>
-        <lastmod>2025-02-04</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <!-- Marks Percentage Calculator Page -->
-    <url>
-        <loc>/Marks-Percentage-Calculator/</loc>
-        <lastmod>2025-02-04</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
     </url>
 </urlset>

@@ -5,6 +5,7 @@ import "./hero.css";
 import { BsInstagram, BsWhatsapp, BsLinkedin } from "react-icons/bs";
 import { MdMailOutline } from "react-icons/md";
 import { motion } from "framer-motion";
+import { withBasePath } from "../../lib/basePath";
 
 const socialLinks = [
   {
@@ -49,7 +50,7 @@ const Hero = () => {
           className="border-2 border-white/10 group relative w-40 sm:w-40 md:w-48 lg:w-56 aspect-square overflow-hidden rounded-full shadow-2xl shadow-black/50"
         >
           <Image
-            src="/images/hero/IMG_4620.JPG"
+            src={withBasePath("/images/hero/IMG_4620.JPG")}
             alt="Ananya Kaul - profile photo"
             fill
             priority
@@ -75,7 +76,7 @@ const Hero = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/resume.pdf"
+              href={withBasePath("/resume.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/30"

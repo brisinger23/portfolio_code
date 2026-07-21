@@ -6,6 +6,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CursorTrail from "./components/CursorTrail";
 
+const SITE_URL = "https://brisinger23.github.io/portfolio_code";
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
@@ -23,7 +25,7 @@ const schemaData = {
   "@type": "Person",
   name: "ANANYA KAUL",
   url: "https://www.linkedin.com/in/ananyakaul",
-  image: "/images/hero/IMG_4620.JPG",
+  image: `${SITE_URL}/images/hero/IMG_4620.JPG`,
   sameAs: [
     "https://www.instagram.com/theluckylad",
     "https://www.linkedin.com/in/ananyakaul",
@@ -51,20 +53,20 @@ export const metadata: Metadata = {
     "Python",
     "Portfolio",
   ],
-  metadataBase: new URL("http://localhost:3000"), // Localhost for now or generic
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: "/",
+    canonical: `${SITE_URL}/`,
   },
   openGraph: {
     type: "website",
-    url: "/",
+    url: `${SITE_URL}/`,
     title: "Ananya Kaul | iOS Developer & AI Enthusiast",
     description:
       "Ananya Kaul — Junior Mobile Developer specializing in high-performance iOS applications and AI/ML solutions.",
     siteName: "Ananya Kaul Portfolio",
     images: [
       {
-        url: "/images/hero/IMG_4620.JPG",
+        url: `${SITE_URL}/images/hero/IMG_4620.JPG`,
         width: 800,
         height: 800,
         alt: "Ananya Kaul",
@@ -83,8 +85,8 @@ export const metadata: Metadata = {
     title: "Ananya Kaul",
   },
   icons: {
-    icon: "/images/hero/IMG_4620.JPG?v=1", // Using profile picture with version to force refresh
-    apple: "/images/hero/IMG_4620.JPG",
+    icon: `${SITE_URL}/images/hero/IMG_4620.JPG?v=1`, // Using profile picture with version to force refresh
+    apple: `${SITE_URL}/images/hero/IMG_4620.JPG`,
   },
 };
 

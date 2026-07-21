@@ -1,14 +1,18 @@
 'use client';
 import React from "react";
-import { Code2Icon } from "lucide-react";
+import { Clapperboard, Bot, CreditCard, Wand2 } from "lucide-react";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 import Image from "next/image";
 import SectionHeader from "../ui/SectionHeader";
 import { motion } from "framer-motion";
+import { withBasePath } from "../../lib/basePath";
 
 type Project = {
   title: string;
   description: string;
-  image: string;
+  icon: string | null; // app icon from the App Store, null for unreleased/client-internal apps
+  glyph?: React.ReactNode; // fallback artwork when there is no store icon
+  gradient?: string;
   tags: string[];
   appStore: string | null;
   playStore: string | null;
@@ -18,62 +22,154 @@ const projects: Project[] = [
   {
     title: "Math AI - Homework Helper",
     description:
-      "A cross-platform mobile app using Flutter to help students solve math problems, write essays with AI, and summarize PDFs. Features real-time math solver with camera input.",
-    image: "/images/projects/mcodo.webp",
-    tags: ["Flutter", "Dart", "GetX", "Firebase", "SQLite", "STT/TTS"],
-    appStore: "https://apps.apple.com/in/app/ai-math-helper-home-work-help/id6748338780",
-    playStore: null,
+      "Cross-platform Flutter app that helps students solve math problems, write essays with AI, and summarize PDFs. Built with GetX state management, Realm database, chat modules, and multi-API integrations.",
+    icon: withBasePath("/images/apps/math-ai.jpg"),
+    tags: ["Flutter", "Dart", "GetX", "Realm", "AI APIs", "PDF Summaries"],
+    appStore: "https://apps.apple.com/us/app/apple-store/id6748338780",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.Mathai.homework.helper",
   },
-
   {
-    title: "PhotoVoice Translator",
+    title: "AI Video Editor",
     description:
-      "iOS app for real-time text translation, word-to-text, and PDF-to-text extraction. Integrated AI chat prompts using DeepSeek API.",
-    image: "/images/projects/hrms.webp",
-    tags: [
-      "Swift",
-      "UIKit",
-      "Vision Framework",
-      "Google Translation API",
-      "Alamofire",
-    ],
-    appStore: "https://apps.apple.com/in/app/ai-photo-translator-scanner/id1583769542",
+      "AI-powered video editing and generation app. Integrated credit checks for live users, shipped new feature updates, and conducted R&D on AI video generation models including SeeDance Pro and Kling 1.6 Standard.",
+    icon: null,
+    glyph: <Clapperboard size={44} strokeWidth={1.5} />,
+    gradient: "from-fuchsia-600/50 via-purple-700/40 to-blue-700/50",
+    tags: ["AI Video Generation", "SeeDance Pro", "Kling 1.6", "Credit System"],
+    appStore: null,
     playStore: null,
   },
   {
-    title: "SecondLine",
+    title: "Meme Me: AI Selfie Maker",
     description:
-      "iOS application enabling users to acquire alternate phone numbers. Features VoIP calling, messaging, and push notifications.",
-    image: "/images/projects/mpc.webp",
+      "Selfie-to-meme generator for iOS. Developed the camera and API modules, added local notifications, generation limits and watermarks, resolved Firebase crashes, and launched it on the App Store where it gained significant traction.",
+    icon: withBasePath("/images/apps/meme-me.jpg"),
+    tags: ["iOS", "Camera", "AI Meme Generation", "Firebase", "Notifications"],
+    appStore: "https://apps.apple.com/us/app/meme-me-ai-selfie-maker/id6751577271",
+    playStore: null,
+  },
+  {
+    title: "Memes Photo Maker Video Editor",
+    description:
+      "Meme photo and video creation app for iOS. Developed new in-app screens and a referral code system, and improved the app's flow, stability, and overall user experience — driving high engagement on the App Store.",
+    icon: withBasePath("/images/apps/memes.jpg"),
+    tags: ["iOS", "Referral System", "Video Editing", "UX Flow"],
+    appStore:
+      "https://apps.apple.com/us/app/memes-photo-maker-video-editor/id1513382617",
+    playStore: null,
+  },
+  {
+    title: "Ripl: Invitation Maker & RSVP",
+    description:
+      "Invitation maker for iOS with custom templates, digital RSVPs, and seamless sharing. Delivered code improvements and crash fixes, and optimized key flows for a smooth user experience.",
+    icon: withBasePath("/images/apps/ripl-invitation-maker.jpg"),
+    tags: ["iOS", "Custom Templates", "Sharing", "Performance"],
+    appStore:
+      "https://apps.apple.com/us/app/invitation-maker-digital-rsvp/id1465210016",
+    playStore: null,
+  },
+  {
+    title: "Jeeves - AI Chat App",
+    description:
+      "AI chat assistant. Fixed AI response issues, integrated new models to enhance the app's AI capabilities, and improved overall performance and response accuracy.",
+    icon: null,
+    glyph: <Bot size={44} strokeWidth={1.5} />,
+    gradient: "from-emerald-600/50 via-teal-700/40 to-cyan-700/50",
+    tags: ["AI Chat", "LLM Integration", "Model Upgrades", "Performance"],
+    appStore: null,
+    playStore: null,
+  },
+  {
+    title: "AI Photo Translator & Scanner",
+    description:
+      "iOS app for real-time photo translation, word-to-text, and PDF-to-text extraction. Implemented a new Realm model, tutor functions, and AI chat prompts for a more interactive translation experience.",
+    icon: withBasePath("/images/apps/photo-translator.jpg"),
+    tags: ["Swift", "UIKit", "Vision", "Google Translation API", "Realm"],
+    appStore:
+      "https://apps.apple.com/us/app/ai-photo-translator-scanner/id1583769542",
+    playStore: null,
+  },
+  {
+    title: "PDF Editor: Fill, Edit, e-Sign",
+    description:
+      "Comprehensive iOS PDF suite with two-way conversions (Word, Excel, PNG, JPG, SVG, PowerPoint), File Provider and Share extensions, AI-powered PDF chat with Core Data history, and Firebase analytics & crash reporting.",
+    icon: withBasePath("/images/apps/pdf-editor.jpg"),
+    tags: ["Swift", "PDFKit", "Action Extensions", "Core Data", "AI Chat"],
+    appStore:
+      "https://apps.apple.com/us/app/pdf-editor-fill-edit-e-sign/id1591585643",
+    playStore: null,
+  },
+  {
+    title: "Word Editor: Docs, Office & PDF",
+    description:
+      "iOS Word document editor with a hybrid native + TypeScript web-editor architecture. Built the Components, Editor, Navigation, and Services modules with document import/export, rich text editing, and file management.",
+    icon: withBasePath("/images/apps/word-editor.jpg"),
+    tags: ["Swift", "TypeScript", "Hybrid Architecture", "Rich Text"],
+    appStore:
+      "https://apps.apple.com/us/app/word-editor-docs-office-pdf/id6760694732",
+    playStore: null,
+  },
+  {
+    title: "PDF Scanner ~ Scan Document",
+    description:
+      "Advanced document manager in Swift 5 — scanning, annotations, text extraction, QR/barcode scanning and creation, signatures, Share and Widget extensions, deep linking, and in-app purchases. Published under Protools LLP.",
+    icon: withBasePath("/images/apps/pdf-scanner.jpg"),
+    tags: ["Swift 5", "VisionKit", "QR & Barcode", "Annotations", "Widgets"],
+    appStore:
+      "https://apps.apple.com/us/app/pdf-scanner-scan-document/id1469182761",
+    playStore: null,
+  },
+  {
+    title: "TEXT UP - 2nd Phone Number",
+    description:
+      "Cross-platform second-number app (formerly SecondLine) built in Flutter for Android, iOS, macOS, Windows, Linux, and Web. Architected clean modular layers and integrated APIs for number purchasing, credits, call logs, and messaging.",
+    icon: withBasePath("/images/apps/text-up.jpg"),
+    tags: ["Flutter", "Dart", "Cross-Platform", "VoIP", "Clean Architecture"],
+    appStore: "https://apps.apple.com/us/app/apple-store/id6755144921",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.second.phonenumber.secondline",
+  },
+  {
+    title: "Second Line: 2nd Phone Number",
+    description:
+      "Native iOS application enabling users to acquire alternate phone numbers. Features VoIP calling, messaging, and push notifications.",
+    icon: withBasePath("/images/apps/second-line.jpg"),
     tags: ["Swift", "UIKit", "Telnyx API", "Core Data", "WebRTC", "CallKit"],
-    appStore: "https://apps.apple.com/in/app/talkatone-2nd-phone-number/id1645238377",
+    appStore:
+      "https://apps.apple.com/us/app/second-line-2nd-phone-number/id1645238377",
     playStore: null,
   },
   {
-    title: "EcoTrack: Carbon Footprint Tracker",
+    title: "AI Cleaner: Duplicate Photos",
     description:
-      "A comprehensive sustainability tool that calculates personal carbon emissions based on lifestyle habits. Features interactive data visualizations, goal setting, and integration with public transport APIs to suggest greener routes.",
-    image: "/images/projects/mcodo.webp",
-    tags: ["SwiftUI", "Core Data", "Combine", "MapKit", "Charts"],
-    appStore: "https://apps.apple.com/app/ecotrack/id123456789",
-    playStore: "https://play.google.com/store/apps/details?id=com.ecotrack",
+      "iOS phone-cleaning app (CleanMyPhone) built with SwiftUI. Reusable views, modular feature screens, Google OAuth and Firebase for auth and analytics, with smart cleaning features and a clean, intuitive UI.",
+    icon: withBasePath("/images/apps/photo-cleaner.jpg"),
+    tags: ["SwiftUI", "Google OAuth", "Firebase", "Smart Cleaning"],
+    appStore:
+      "https://apps.apple.com/us/app/duplicate-photos-cleaning-app/id6748720062",
+    playStore: null,
   },
   {
-    title: "ZenMind: Meditation & Mindfulness",
+    title: "Cancel Subscription Management",
     description:
-      "A premium mental wellness application offering guided meditation sessions, breathing exercises, and sleep sounds. Utilizes HealthKit to monitor heart rate variability and provide personalized relaxation recommendations.",
-    image: "/images/projects/hrms.webp",
-    tags: ["Swift", "UIKit", "HealthKit", "AVFoundation", "Core Animation"],
-    appStore: "https://apps.apple.com/app/zenmind/id987654321",
-    playStore: "https://play.google.com/store/apps/details?id=com.zenmind",
+      "Dedicated iOS app for managing and canceling user subscriptions. Structured into App, Core, Features, Resources, and Shared modules with unit tests and a clean, user-friendly cancellation flow.",
+    icon: null,
+    glyph: <CreditCard size={44} strokeWidth={1.5} />,
+    gradient: "from-orange-600/50 via-rose-700/40 to-red-700/50",
+    tags: ["iOS", "Swift", "Modular Architecture", "Unit Testing"],
+    appStore: null,
+    playStore: null,
   },
   {
-    title: "CryptoPulse: Real-Time Market Monitor",
+    title: "Adgram / Story Maker",
     description:
-      "A high-frequency dashboard for tracking cryptocurrency market trends and news. Features live price updates via WebSockets, customizable alerts, and a secure local wallet for managing cross-chain assets.",
-    image: "/images/projects/mpc.webp",
-    tags: ["Flutter", "ApexCharts", "WebSockets", "Firebase", "Local Auth"],
-    appStore: "https://apps.apple.com/app/cryptopulse/id543216789",
+      "iOS story and ad creation app with rich media editing — Core Data, Core ML, Metal filters, custom CALayer classes, resizable views, snap-line alignment, screenshot prevention, and Firebase App Events analytics.",
+    icon: null,
+    glyph: <Wand2 size={44} strokeWidth={1.5} />,
+    gradient: "from-blue-600/50 via-indigo-700/40 to-violet-700/50",
+    tags: ["Swift", "Core ML", "Metal", "Core Data", "Custom UI"],
+    appStore: null,
     playStore: null,
   },
 ];
@@ -89,9 +185,9 @@ const Projects = () => {
           viewport={{ once: true }}
         >
           <SectionHeader
-            title="Projects"
+            title="Apps"
             subtitle="Featured"
-            description="A selection of my recent work demonstrating my skills and experience."
+            description="Apps I've built, improved, and shipped to production — many live on the App Store and Google Play."
           />
         </motion.div>
 
@@ -135,7 +231,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mt-6 text-center text-gray-500"
         >
-          Delivered 15+ confidential projects across web and mobile platforms.
+          Shipped 15+ production apps across iOS, Android, and cross-platform stacks.
         </motion.div>
       </div>
     </section>
@@ -144,31 +240,71 @@ const Projects = () => {
 
 export default Projects;
 
+const CardArtwork = ({ project }: { project: Project }) => {
+  return (
+    <>
+      {project.icon ? (
+        <>
+          {/* Blurred icon as ambient backdrop */}
+          <Image
+            fill
+            loading="lazy"
+            src={project.icon}
+            alt=""
+            aria-hidden
+            className="object-cover scale-150 blur-2xl opacity-50 transition-transform duration-700 group-hover:scale-[1.7]"
+          />
+          <div className="absolute inset-0 bg-gray-950/40" />
+          {/* Sharp app icon front and center */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Image
+              src={project.icon}
+              width={96}
+              height={96}
+              loading="lazy"
+              alt={`${project.title} app icon`}
+              className="rounded-[22%] shadow-2xl shadow-black/60 ring-1 ring-white/20 transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+        </>
+      ) : (
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${project.gradient ?? "from-gray-700/50 to-gray-900/50"} flex items-center justify-center`}
+        >
+          <div className="w-24 h-24 rounded-[22%] bg-white/10 ring-1 ring-white/20 shadow-2xl shadow-black/60 flex items-center justify-center text-white/90 transition-transform duration-500 group-hover:scale-110">
+            {project.glyph}
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
 const ProjectCard = ({ project }: { project: Project }) => {
+  const storeLink = project.appStore || project.playStore;
+
   return (
     <article className="h-full flex flex-col glass-effect text-gray-300 rounded-2xl overflow-hidden group transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-black/40 hover:border-white/20">
-      {/* Image Section - Wrapped in link if appStore or playStore exists */}
-      <a
-        href={project.appStore || project.playStore || "#"}
-        target={project.appStore || project.playStore ? "_blank" : "_self"}
-        rel="noopener noreferrer"
-        className="block relative overflow-hidden aspect-video cursor-pointer"
-      >
-        <Image
-          fill
-          loading="lazy"
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-          {(project.appStore || project.playStore) && (
+      {/* Artwork Section - Wrapped in link if appStore or playStore exists */}
+      {storeLink ? (
+        <a
+          href={storeLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block relative overflow-hidden aspect-video cursor-pointer"
+        >
+          <CardArtwork project={project} />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
             <span className="bg-blue-600 px-6 py-2 rounded-full text-white font-bold text-sm border border-blue-400/50 shadow-lg shadow-blue-500/30 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              View Project
+              View App
             </span>
-          )}
+          </div>
+        </a>
+      ) : (
+        <div className="block relative overflow-hidden aspect-video">
+          <CardArtwork project={project} />
         </div>
-      </a>
+      )}
 
       {/* Content Section */}
       <div className="flex flex-col flex-1 p-6 sm:p-7 gap-4">
@@ -195,30 +331,32 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
 
         {/* Push the buttons to the bottom */}
-        <div className="mt-auto flex gap-3 pt-4 border-t border-white/10">
-          {project.appStore && (
-            <a
-              href={project.appStore}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 flex justify-center items-center py-2.5 rounded-xl border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all text-sm group/btn"
-            >
-              <Image src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Apple_logo_black.svg" width={16} height={16} alt="App Store" className="mr-2 invert group-hover/btn:scale-110 transition-transform" />
-              App Store
-            </a>
-          )}
-          {project.playStore && (
-            <a
-              href={project.playStore}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 flex justify-center items-center py-2.5 rounded-xl border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all text-sm group/btn"
-            >
-              <Image src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Google_Play_Store_badge_EN.svg" width={16} height={16} alt="Play Store" className="mr-2 group-hover/btn:scale-110 transition-transform" />
-              Play Store
-            </a>
-          )}
-        </div>
+        {(project.appStore || project.playStore) && (
+          <div className="mt-auto flex gap-3 pt-4 border-t border-white/10">
+            {project.appStore && (
+              <a
+                href={project.appStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex justify-center items-center py-2.5 rounded-xl border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all text-sm group/btn"
+              >
+                <FaApple size={16} className="mr-2 group-hover/btn:scale-110 transition-transform" />
+                App Store
+              </a>
+            )}
+            {project.playStore && (
+              <a
+                href={project.playStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex justify-center items-center py-2.5 rounded-xl border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all text-sm group/btn"
+              >
+                <FaGooglePlay size={15} className="mr-2 group-hover/btn:scale-110 transition-transform" />
+                Play Store
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );

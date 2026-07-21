@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { BsGithub } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { withBasePath } from "../lib/basePath";
 
 const Header = () => {
   return (
@@ -60,7 +61,7 @@ const NavBar = () => {
           </li>
           <li className="ml-2">
             <a
-              href="/resume.pdf"
+              href={withBasePath("/resume.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-xl text-xs font-bold transition-all shadow-lg shadow-blue-600/20 active:scale-95"
