@@ -1,23 +1,55 @@
 'use client';
 import React from "react";
 import { IconType } from "react-icons";
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { TbBrandNextjs } from "react-icons/tb";
-import { TbBrandTypescript } from "react-icons/tb";
-import { RiTailwindCssLine } from "react-icons/ri";
-import { SiDart, SiExpress, SiFlutter, SiXcode } from "react-icons/si";
-import { SiPostgresql } from "react-icons/si";
-import { RiAndroidLine } from "react-icons/ri";
-import { TbBrandKotlin } from "react-icons/tb";
-import { SiJetpackcompose } from "react-icons/si";
-import { TbBrandMongodb } from "react-icons/tb";
-import { DiRedis } from "react-icons/di";
-import { TbBrandJavascript } from "react-icons/tb";
-import { SiFirebase } from "react-icons/si";
-import { FaGitAlt } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { RiVercelLine } from "react-icons/ri";
-import { TbBrandCloudflare } from "react-icons/tb";
+import {
+  FaApple,
+  FaAppStoreIos,
+  FaDatabase,
+  FaFilePdf,
+  FaGitAlt,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  SiSwift,
+  SiPython,
+  SiFlutter,
+  SiDart,
+  SiXcode,
+  SiFirebase,
+  SiRealm,
+  SiSqlite,
+  SiJira,
+  SiOpenai,
+  SiGoogletranslate,
+  SiWebrtc,
+  SiFastlane,
+} from "react-icons/si";
+import {
+  TbApi,
+  TbBrain,
+  TbBrandSwift,
+  TbBrandApple,
+  TbBrandAppstore,
+  TbCpu,
+  TbDevices,
+  TbEye,
+  TbFlame,
+  TbLink,
+  TbMessageChatbot,
+  TbPhone,
+  TbPhoneCall,
+  TbPlane,
+  TbRocket,
+  TbSparkles,
+  TbTestPipe,
+  TbVideo,
+} from "react-icons/tb";
+import {
+  MdArchitecture,
+  MdWidgets,
+  MdOutlineNotificationsActive,
+  MdOutlineDocumentScanner,
+} from "react-icons/md";
 import SectionHeader from "../ui/SectionHeader";
 import { motion } from "framer-motion";
 
@@ -35,33 +67,73 @@ export const skillsData: SkillGroup[] = [
   {
     title: "iOS Development",
     skills: [
-      { name: "Swift", logo: TbBrandKotlin }, // Using Kotlin icon as placeholder if Swift not available, but should check imports. I'll stick to what is available or use generic. Let's use generic or what is imported.
-      { name: "UIKit", logo: RiAndroidLine },
-      { name: "Storyboard", logo: RiAndroidLine },
-      { name: "MVVM / MVC", logo: TbBrandTypescript },
-      { name: "CoreML", logo: FaNodeJs },
-      { name: "XCTest", logo: SiJetpackcompose },
+      { name: "Swift", logo: SiSwift },
+      { name: "SwiftUI", logo: TbBrandSwift },
+      { name: "UIKit", logo: FaApple },
+      { name: "Objective-C", logo: TbBrandApple },
+      { name: "Storyboard & XIB", logo: TbDevices },
+      { name: "MVVM / MVC", logo: MdArchitecture },
+      { name: "XCTest", logo: TbTestPipe },
     ],
   },
   {
-    title: "Languages & Tools",
+    title: "Apple Frameworks",
     skills: [
-      { name: "Python", logo: TbBrandJavascript },
-      { name: "Swift", logo: TbBrandKotlin },
-      { name: "Dart", logo: SiDart },
+      { name: "Core Data", logo: FaDatabase },
+      { name: "Core ML", logo: TbCpu },
+      { name: "Vision", logo: TbEye },
+      { name: "CallKit", logo: TbPhoneCall },
+      { name: "WidgetKit", logo: MdWidgets },
+      { name: "PDFKit", logo: FaFilePdf },
+      { name: "StoreKit / IAP", logo: FaAppStoreIos },
+      { name: "Metal", logo: TbSparkles },
+    ],
+  },
+  {
+    title: "Cross-Platform (Flutter)",
+    skills: [
       { name: "Flutter", logo: SiFlutter },
-      { name: "XCode", logo: SiXcode },
-      { name: "Git", logo: FaGitAlt },
-      { name: "Jira", logo: FaGithub },
+      { name: "Dart", logo: SiDart },
+      { name: "GetX", logo: TbRocket },
+      { name: "Realm DB", logo: SiRealm },
+      { name: "Firebase", logo: SiFirebase },
+      { name: "Android / iOS / Desktop / Web", logo: TbDevices },
     ],
   },
   {
-    title: "APIs & Frameworks",
+    title: "AI & ML",
     skills: [
-      { name: "RESTful APIs", logo: SiExpress },
-      { name: "WebRTC", logo: TbBrandCloudflare },
-      { name: "Google Translation API", logo: RiVercelLine },
-      { name: "Telnyx API", logo: DiRedis },
+      { name: "Python", logo: SiPython },
+      { name: "LLM APIs (OpenAI, DeepSeek)", logo: SiOpenai },
+      { name: "AI Chat Integrations", logo: TbMessageChatbot },
+      { name: "AI Video Models (Kling, SeeDance)", logo: TbVideo },
+      { name: "Core ML & Vision", logo: TbBrain },
+      { name: "OCR & Text Extraction", logo: MdOutlineDocumentScanner },
+    ],
+  },
+  {
+    title: "APIs & Backend",
+    skills: [
+      { name: "RESTful APIs", logo: TbApi },
+      { name: "Alamofire", logo: TbFlame },
+      { name: "WebRTC", logo: SiWebrtc },
+      { name: "Telnyx API", logo: TbPhone },
+      { name: "Google Translation API", logo: SiGoogletranslate },
+      { name: "SQLite", logo: SiSqlite },
+      { name: "Push Notifications", logo: MdOutlineNotificationsActive },
+      { name: "Deep Linking", logo: TbLink },
+    ],
+  },
+  {
+    title: "Tools & Workflow",
+    skills: [
+      { name: "Xcode", logo: SiXcode },
+      { name: "Git", logo: FaGitAlt },
+      { name: "GitHub", logo: FaGithub },
+      { name: "Jira", logo: SiJira },
+      { name: "Fastlane", logo: SiFastlane },
+      { name: "App Store Connect", logo: TbBrandAppstore },
+      { name: "TestFlight", logo: TbPlane },
     ],
   },
 ];
@@ -102,9 +174,9 @@ const Skills = () => {
             },
           }}
           viewport={{ once: true }}
-          className="max-w-4xl"
+          className="max-w-6xl w-full"
         >
-          <div className="mt-6 flex flex-col md:flex-row w-full gap-6 border border-gray-700 text-gray-300 backdrop-blur-3xl bg-[#161B22]/70 p-8 rounded-2xl">
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-8 border border-gray-700 text-gray-300 backdrop-blur-3xl bg-[#161B22]/70 p-8 rounded-2xl">
             {skillsData.map((skill) => (
               <motion.div
                 key={skill.title}
@@ -129,11 +201,11 @@ const SkillsCard = ({ group }: { group: SkillGroup }) => {
     <div key={group.title}>
       <h2 className="font-medium pb-2 mb-4">{group.title}</h2>
 
-      <div className="flex flex-wrap gap-2 md:gap-4 justify-start items-center">
+      <div className="flex flex-wrap gap-2 md:gap-3 justify-start items-center">
         {group.skills.map((skill) => (
           <div
             key={skill.name}
-            className="text-gray-400 hover:text-foreground hover:decoration-1 hover:underline decoration-red-500 flex items-center gap-2 border border-gray-700 bg-[#0D1117] px-4 py-2 rounded-md hover:scale-105 hover:rotate-3 transition-transform"
+            className="text-gray-400 hover:text-foreground hover:decoration-1 hover:underline decoration-red-500 flex items-center gap-2 border border-gray-700 bg-[#0D1117] px-3 py-2 rounded-md hover:scale-105 hover:rotate-3 transition-transform"
           >
             <skill.logo />
             <span className="text-sm font-medium">{skill.name}</span>
