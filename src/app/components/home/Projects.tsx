@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-import { Clapperboard, Bot, CreditCard, Wand2 } from "lucide-react";
+import { Clapperboard, Bot, CreditCard } from "lucide-react";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import Image from "next/image";
 import SectionHeader from "../ui/SectionHeader";
@@ -20,6 +20,36 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Second Line: 2nd Phone Number",
+    description:
+      "Native iOS application enabling users to acquire alternate phone numbers. Features VoIP calling, messaging, and push notifications.",
+    icon: withBasePath("/images/apps/second-line.jpg"),
+    tags: ["Swift", "UIKit", "Telnyx API", "Core Data", "WebRTC", "CallKit"],
+    appStore:
+      "https://apps.apple.com/us/app/second-line-2nd-phone-number/id1645238377",
+    playStore: null,
+  },
+  {
+    title: "Invitation Maker & RSVP",
+    description:
+      "Invitation and story creation app for iOS (Ripl / Adgram) with rich media editing — custom templates, digital RSVPs, and seamless sharing. Built with Core Data, Core ML, Metal filters, custom CALayer classes, snap-line alignment, resizable views, and screenshot prevention.",
+    icon: withBasePath("/images/apps/ripl-invitation-maker.jpg"),
+    tags: ["iOS", "Core ML", "Metal", "Custom Templates", "Digital RSVP"],
+    appStore:
+      "https://apps.apple.com/us/app/invitation-maker-digital-rsvp/id1465210016",
+    playStore: null,
+  },
+  {
+    title: "PDF Scanner ~ Scan Document",
+    description:
+      "Advanced document manager in Swift 5 — scanning, annotations, text extraction, QR/barcode scanning and creation, signatures, Share and Widget extensions, deep linking, and in-app purchases. Published under Protools LLP.",
+    icon: withBasePath("/images/apps/pdf-scanner.jpg"),
+    tags: ["Swift 5", "VisionKit", "QR & Barcode", "Annotations", "Widgets"],
+    appStore:
+      "https://apps.apple.com/us/app/pdf-scanner-scan-document/id1469182761",
+    playStore: null,
+  },
+  {
     title: "Math AI - Homework Helper",
     description:
       "Cross-platform Flutter app that helps students solve math problems, write essays with AI, and summarize PDFs. Built with GetX state management, Realm database, chat modules, and multi-API integrations.",
@@ -30,14 +60,43 @@ const projects: Project[] = [
       "https://play.google.com/store/apps/details?id=com.Mathai.homework.helper",
   },
   {
-    title: "AI Video Editor",
+    title: "Word Editor: Docs, Office & PDF",
     description:
-      "AI-powered video editing and generation app. Integrated credit checks for live users, shipped new feature updates, and conducted R&D on AI video generation models including SeeDance Pro and Kling 1.6 Standard.",
-    icon: null,
-    glyph: <Clapperboard size={44} strokeWidth={1.5} />,
-    gradient: "from-fuchsia-600/50 via-purple-700/40 to-blue-700/50",
-    tags: ["AI Video Generation", "SeeDance Pro", "Kling 1.6", "Credit System"],
-    appStore: null,
+      "iOS Word document editor with a hybrid native + TypeScript web-editor architecture. Built the Components, Editor, Navigation, and Services modules with document import/export, rich text editing, and file management.",
+    icon: withBasePath("/images/apps/word-editor.jpg"),
+    tags: ["Swift", "TypeScript", "Hybrid Architecture", "Rich Text"],
+    appStore:
+      "https://apps.apple.com/us/app/word-editor-docs-office-pdf/id6760694732",
+    playStore: null,
+  },
+  {
+    title: "TEXT UP - 2nd Phone Number",
+    description:
+      "Cross-platform second-number app (formerly SecondLine) built in Flutter for Android, iOS, macOS, Windows, Linux, and Web. Architected clean modular layers and integrated APIs for number purchasing, credits, call logs, and messaging.",
+    icon: withBasePath("/images/apps/text-up.jpg"),
+    tags: ["Flutter", "Dart", "Cross-Platform", "VoIP", "Clean Architecture"],
+    appStore: "https://apps.apple.com/us/app/apple-store/id6755144921",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.second.phonenumber.secondline",
+  },
+  {
+    title: "PDF Editor: Fill, Edit, e-Sign",
+    description:
+      "Comprehensive iOS PDF suite with two-way conversions (Word, Excel, PNG, JPG, SVG, PowerPoint), File Provider and Share extensions, AI-powered PDF chat with Core Data history, and Firebase analytics & crash reporting.",
+    icon: withBasePath("/images/apps/pdf-editor.jpg"),
+    tags: ["Swift", "PDFKit", "Action Extensions", "Core Data", "AI Chat"],
+    appStore:
+      "https://apps.apple.com/us/app/pdf-editor-fill-edit-e-sign/id1591585643",
+    playStore: null,
+  },
+  {
+    title: "AI Photo Translator & Scanner",
+    description:
+      "iOS app for real-time photo translation, word-to-text, and PDF-to-text extraction. Implemented a new Realm model, tutor functions, and AI chat prompts for a more interactive translation experience.",
+    icon: withBasePath("/images/apps/photo-translator.jpg"),
+    tags: ["Swift", "UIKit", "Vision", "Google Translation API", "Realm"],
+    appStore:
+      "https://apps.apple.com/us/app/ai-photo-translator-scanner/id1583769542",
     playStore: null,
   },
   {
@@ -60,13 +119,24 @@ const projects: Project[] = [
     playStore: null,
   },
   {
-    title: "Ripl: Invitation Maker & RSVP",
+    title: "AI Cleaner: Duplicate Photos",
     description:
-      "Invitation maker for iOS with custom templates, digital RSVPs, and seamless sharing. Delivered code improvements and crash fixes, and optimized key flows for a smooth user experience.",
-    icon: withBasePath("/images/apps/ripl-invitation-maker.jpg"),
-    tags: ["iOS", "Custom Templates", "Sharing", "Performance"],
+      "iOS phone-cleaning app (CleanMyPhone) built with SwiftUI. Reusable views, modular feature screens, Google OAuth and Firebase for auth and analytics, with smart cleaning features and a clean, intuitive UI.",
+    icon: withBasePath("/images/apps/photo-cleaner.jpg"),
+    tags: ["SwiftUI", "Google OAuth", "Firebase", "Smart Cleaning"],
     appStore:
-      "https://apps.apple.com/us/app/invitation-maker-digital-rsvp/id1465210016",
+      "https://apps.apple.com/us/app/duplicate-photos-cleaning-app/id6748720062",
+    playStore: null,
+  },
+  {
+    title: "AI Video Editor",
+    description:
+      "AI-powered video editing and generation app. Integrated credit checks for live users, shipped new feature updates, and conducted R&D on AI video generation models including SeeDance Pro and Kling 1.6 Standard.",
+    icon: null,
+    glyph: <Clapperboard size={44} strokeWidth={1.5} />,
+    gradient: "from-fuchsia-600/50 via-purple-700/40 to-blue-700/50",
+    tags: ["AI Video Generation", "SeeDance Pro", "Kling 1.6", "Credit System"],
+    appStore: null,
     playStore: null,
   },
   {
@@ -81,76 +151,6 @@ const projects: Project[] = [
     playStore: null,
   },
   {
-    title: "AI Photo Translator & Scanner",
-    description:
-      "iOS app for real-time photo translation, word-to-text, and PDF-to-text extraction. Implemented a new Realm model, tutor functions, and AI chat prompts for a more interactive translation experience.",
-    icon: withBasePath("/images/apps/photo-translator.jpg"),
-    tags: ["Swift", "UIKit", "Vision", "Google Translation API", "Realm"],
-    appStore:
-      "https://apps.apple.com/us/app/ai-photo-translator-scanner/id1583769542",
-    playStore: null,
-  },
-  {
-    title: "PDF Editor: Fill, Edit, e-Sign",
-    description:
-      "Comprehensive iOS PDF suite with two-way conversions (Word, Excel, PNG, JPG, SVG, PowerPoint), File Provider and Share extensions, AI-powered PDF chat with Core Data history, and Firebase analytics & crash reporting.",
-    icon: withBasePath("/images/apps/pdf-editor.jpg"),
-    tags: ["Swift", "PDFKit", "Action Extensions", "Core Data", "AI Chat"],
-    appStore:
-      "https://apps.apple.com/us/app/pdf-editor-fill-edit-e-sign/id1591585643",
-    playStore: null,
-  },
-  {
-    title: "Word Editor: Docs, Office & PDF",
-    description:
-      "iOS Word document editor with a hybrid native + TypeScript web-editor architecture. Built the Components, Editor, Navigation, and Services modules with document import/export, rich text editing, and file management.",
-    icon: withBasePath("/images/apps/word-editor.jpg"),
-    tags: ["Swift", "TypeScript", "Hybrid Architecture", "Rich Text"],
-    appStore:
-      "https://apps.apple.com/us/app/word-editor-docs-office-pdf/id6760694732",
-    playStore: null,
-  },
-  {
-    title: "PDF Scanner ~ Scan Document",
-    description:
-      "Advanced document manager in Swift 5 — scanning, annotations, text extraction, QR/barcode scanning and creation, signatures, Share and Widget extensions, deep linking, and in-app purchases. Published under Protools LLP.",
-    icon: withBasePath("/images/apps/pdf-scanner.jpg"),
-    tags: ["Swift 5", "VisionKit", "QR & Barcode", "Annotations", "Widgets"],
-    appStore:
-      "https://apps.apple.com/us/app/pdf-scanner-scan-document/id1469182761",
-    playStore: null,
-  },
-  {
-    title: "TEXT UP - 2nd Phone Number",
-    description:
-      "Cross-platform second-number app (formerly SecondLine) built in Flutter for Android, iOS, macOS, Windows, Linux, and Web. Architected clean modular layers and integrated APIs for number purchasing, credits, call logs, and messaging.",
-    icon: withBasePath("/images/apps/text-up.jpg"),
-    tags: ["Flutter", "Dart", "Cross-Platform", "VoIP", "Clean Architecture"],
-    appStore: "https://apps.apple.com/us/app/apple-store/id6755144921",
-    playStore:
-      "https://play.google.com/store/apps/details?id=com.second.phonenumber.secondline",
-  },
-  {
-    title: "Second Line: 2nd Phone Number",
-    description:
-      "Native iOS application enabling users to acquire alternate phone numbers. Features VoIP calling, messaging, and push notifications.",
-    icon: withBasePath("/images/apps/second-line.jpg"),
-    tags: ["Swift", "UIKit", "Telnyx API", "Core Data", "WebRTC", "CallKit"],
-    appStore:
-      "https://apps.apple.com/us/app/second-line-2nd-phone-number/id1645238377",
-    playStore: null,
-  },
-  {
-    title: "AI Cleaner: Duplicate Photos",
-    description:
-      "iOS phone-cleaning app (CleanMyPhone) built with SwiftUI. Reusable views, modular feature screens, Google OAuth and Firebase for auth and analytics, with smart cleaning features and a clean, intuitive UI.",
-    icon: withBasePath("/images/apps/photo-cleaner.jpg"),
-    tags: ["SwiftUI", "Google OAuth", "Firebase", "Smart Cleaning"],
-    appStore:
-      "https://apps.apple.com/us/app/duplicate-photos-cleaning-app/id6748720062",
-    playStore: null,
-  },
-  {
     title: "Cancel Subscription Management",
     description:
       "Dedicated iOS app for managing and canceling user subscriptions. Structured into App, Core, Features, Resources, and Shared modules with unit tests and a clean, user-friendly cancellation flow.",
@@ -158,17 +158,6 @@ const projects: Project[] = [
     glyph: <CreditCard size={44} strokeWidth={1.5} />,
     gradient: "from-orange-600/50 via-rose-700/40 to-red-700/50",
     tags: ["iOS", "Swift", "Modular Architecture", "Unit Testing"],
-    appStore: null,
-    playStore: null,
-  },
-  {
-    title: "Adgram / Story Maker",
-    description:
-      "iOS story and ad creation app with rich media editing — Core Data, Core ML, Metal filters, custom CALayer classes, resizable views, snap-line alignment, screenshot prevention, and Firebase App Events analytics.",
-    icon: null,
-    glyph: <Wand2 size={44} strokeWidth={1.5} />,
-    gradient: "from-blue-600/50 via-indigo-700/40 to-violet-700/50",
-    tags: ["Swift", "Core ML", "Metal", "Core Data", "Custom UI"],
     appStore: null,
     playStore: null,
   },
@@ -231,7 +220,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mt-6 text-center text-gray-500"
         >
-          Shipped 15+ production apps across iOS, Android, and cross-platform stacks.
+          Shipped 14+ production apps across iOS, Android, and cross-platform stacks.
         </motion.div>
       </div>
     </section>
